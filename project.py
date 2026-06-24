@@ -26,6 +26,7 @@ from glob import glob
 from keras.models import Sequential, Model
 from keras.layers import Dense, Flatten
 from keras.layers import Conv2D, MaxPooling2D, Dropout
+
 from keras.utils import to_categorical
 from sklearn.model_selection import train_test_split
 
@@ -41,7 +42,14 @@ basepath = path
 folders = os.listdir(basepath)
 print(len(folders), "folders found in basepath:", basepath)
 
-data_all = glob('C:/Users/User/.cache/kagglehub/datasets/paultimothymooney/breast-histopathology-images/**/*.png', recursive=True)
+#data_all = glob('C:/Users/User/.cache/kagglehub/datasets/paultimothymooney/breast-histopathology-images/**/*.png', recursive=True)
+
+data_all = glob(
+    os.path.join(basepath, "**", "*.png"),
+    recursive=True
+)
+
+print("Images found:", len(data_all))
 
 images = []
 labels = []
