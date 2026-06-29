@@ -1,57 +1,81 @@
-Breast Cancer Classification Using a Convolutional Neural Network (CNN)
-Scheffer Miklós, Uribe Unigarro Mariana
+# Breast Cancer Classification Using a Convolutional Neural Network (CNN)
 
-Project Overview
+**Authors:**  
+Scheffer Miklós  
+Uribe Unigarro Mariana
 
-This project develops a Convolutional Neural Network (CNN) to classify breast histopathology images as either cancerous or non-cancerous. The objective is to demonstrate how deep learning can assist in medical image analysis by automatically identifying patterns associated with breast cancer.
+---
 
-1. Problem Statement
+## Project Overview
 
-Breast cancer is one of the most common types of cancer worldwide, and early detection is essential for improving treatment outcomes. Analyzing histopathology images manually is a time-consuming process that requires expert knowledge. This project explores the use of Convolutional Neural Networks (CNNs) to automatically classify breast tissue images as cancerous or non-cancerous, providing a computer-aided approach to medical image analysis.
+This project develops a **Convolutional Neural Network (CNN)** to classify breast histopathology images as either **cancerous** or **non-cancerous**. The objective is to demonstrate how deep learning can assist in medical image analysis by automatically identifying patterns associated with breast cancer.
 
-2. Project Approach
+---
 
-The project follows a supervised learning approach. A CNN is trained using labeled histopathology images to learn visual patterns associated with each class. After training, the model is evaluated on unseen data to measure its classification performance.
+## 1. Problem Statement
 
-3. Project Phases
+Breast cancer is one of the most common types of cancer worldwide, and early detection is essential for improving treatment outcomes. Analyzing histopathology images manually is a time-consuming process that requires expert knowledge. This project explores the use of **Convolutional Neural Networks (CNNs)** to automatically classify breast tissue images as **cancerous** or **non-cancerous**, providing a computer-aided approach to medical image analysis.
 
-The development of the project is divided into the following phases:
+---
 
-Data Acquisition: Download and load the breast histopathology image dataset.
-Data Preprocessing: Resize, normalize, and label the images before splitting them into training and testing datasets.
-Exploratory Analysis: Visualize sample images and analyze the class distribution.
-Model Development: Design and build the CNN architecture.
-Model Training: Train the network using the training dataset while monitoring learning performance.
-Model Evaluation: Evaluate the trained model using accuracy, loss, a confusion matrix, and a classification report.
+## 2. Project Approach
 
-4. Repository Structure
+The project follows a supervised learning approach. A **Convonutional Neural Network (CNN)** is trained using labeled histopathology images to learn visual patterns associated with each class. After training, the model is evaluated on unseen data to measure its classification performance.
+
+---
+
+## 3. Project Phases
+
+The project is divided into the following phases:
+
+- **Data Acquisition:** Download and load the breast histopathology image dataset.
+- **Data Preprocessing:** Resize, normalize, and label the images before splitting them into training and testing datasets.
+- **Exploratory Analysis:** Visualize sample images and analyze the class distribution.
+- **Model Development:** Design and build the CNN architecture.
+- **Model Training:** Train the network while monitoring learning performance.
+- **Model Evaluation:** Assess the trained model using accuracy, loss, a confusion matrix, and a classification report.
+
+---
+
+## 4. Repository Structure
+
+```text
 Project/
 │
-├── project.py            # Main program
-├── README.md             # Project documentation
-├── requirements.txt      # Required Python libraries
-├── dataset/              # Downloaded dataset (generated locally)
-└── results/              # Generated figures and evaluation results (optional)
+├── project.py          # Main program
+├── README.md           # Project documentation
+├── requirements.txt    # Required Python libraries
+├── dataset/            # Downloaded dataset (generated locally)
+└── results/            # Generated figures and evaluation results
+```
 
-5. Usage Information
+---
 
-To run the project:
+## 5. Usage Information
 
-Install the required Python libraries.
-Download the dataset automatically through KaggleHub.
-Execute the main program.
-The program will:
-Load and preprocess the dataset.
-Display sample images and class distribution.
-Train the CNN model.
-Evaluate the trained model.
-Display the accuracy, loss curves, confusion matrix, and classification report.
+1. Install the required Python libraries.
+2. Download the dataset automatically using KaggleHub.
+3. Run `project.py`.
+4. The program will:
+   - Load and preprocess the dataset.
+   - Display sample images and class distribution.
+   - Train the CNN model.
+   - Evaluate the model.
+   - Display the training curves, confusion matrix, and classification report.
+
+---
+
+## 6. Implementation Overview
+
+The program automatically downloads the **Breast Histopathology Images** dataset using KaggleHub and loads up to **50,000** labeled histopathology images. Each image is resized to **50 × 50 pixels**, normalized, and assigned a class label based on the dataset folder structure before being split into **80% training** and **20% testing** datasets.
+
+Before training, the program visualizes sample images and the distribution of cancerous and non-cancerous samples, allowing the dataset to be inspected and verified.
+
+A custom **Convolutional Neural Network (CancerNet)** is then built using **three convolutional layers (16, 32, and 64 filters)** with max-pooling layers for feature extraction, followed by a **Dropout layer (0.5)** to reduce overfitting and fully connected layers for binary classification.
+
+The model is trained using the **Adam optimizer**, **categorical cross-entropy loss**, a **batch size of 32**, and **100 training epochs**. During training, both **accuracy** and **loss** are monitored for the training and validation datasets to evaluate the learning process and detect potential overfitting.
+
+Finally, the trained model is evaluated on previously unseen test images. Its performance is assessed using **test accuracy**, **test loss**, a **confusion matrix**, and a **classification report** containing precision, recall, and F1-score, providing a comprehensive evaluation of its ability to distinguish between cancerous and non-cancerous breast tissue images.
 
 
-6. Detailed Description
-
-This project implements a complete deep learning pipeline for breast cancer image classification. The program begins by downloading and loading a publicly available histopathology image dataset. Each image is preprocessed by resizing it to a fixed size, assigning its corresponding label, and normalizing its pixel values.
-
-The processed data is divided into training and testing sets. A Convolutional Neural Network (CNN) is then constructed to automatically extract relevant image features and classify each sample as either cancerous or non-cancerous. During training, the model's accuracy and loss are monitored to evaluate its learning progress.
-
-Finally, the trained model is tested on previously unseen images. Its performance is assessed using standard classification metrics, including test accuracy, loss, a confusion matrix, and a classification report. These results provide insight into the model's effectiveness and its ability to correctly identify breast cancer from histopathology images.
+---
