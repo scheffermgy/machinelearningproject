@@ -44,7 +44,7 @@ Project/
 │
 ├── project.py          # Main program
 ├── README.md           # Project documentation
-├── dataset/            # Downloaded dataset (generated locally)
+└── dataset/            # Downloaded dataset 
 ```
 
 ---
@@ -65,7 +65,7 @@ Project/
 
 ## 6. Implementation Overview
 
-The program automatically downloads the **Breast Histopathology Images** dataset using KaggleHub and loads up to **50,000** labeled histopathology images. Each image is resized to **50 × 50 pixels**, normalized, and assigned a class label based on the dataset folder structure before being split into **80% training** and **20% testing** datasets.
+The program automatically downloads the **Breast Histopathology Images** dataset using KaggleHub and loads **80%** of the labeled histopathology images (as per the 1. Project Idea). Each image is resized to **50 × 50 pixels**, normalized, and assigned a class label based on the dataset folder structure before being split into **90% training** and **10% testing** datasets.
 
 Before training, the program visualizes sample images and the distribution of cancerous and non-cancerous samples, allowing the dataset to be inspected and verified.
 
