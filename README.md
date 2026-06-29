@@ -44,9 +44,7 @@ Project/
 │
 ├── project.py          # Main program
 ├── README.md           # Project documentation
-├── requirements.txt    # Required Python libraries
 ├── dataset/            # Downloaded dataset (generated locally)
-└── results/            # Generated figures and evaluation results
 ```
 
 ---
